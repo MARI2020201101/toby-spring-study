@@ -12,7 +12,7 @@ public class UserDaoTest {
     private UserDao userDao;
     private ConnectionMaker con;
 
-    @Before
+
     public void setUp(){
         userList.add(new User(1L,"kim"));
         userList.add(new User(2L,"lee"));
@@ -25,6 +25,7 @@ public class UserDaoTest {
 
     @Test
     public void testGetUser(){
+        UserDao userDao = new DaoFactory().userDao();
         System.out.println(userDao.get(1L));
     }
 
