@@ -1,7 +1,10 @@
 package com.mariworld.spring.object;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +21,7 @@ public class UserDao {
         getConnection();
         System.out.println(user.getName() + "was added ");
     }
-    public void getConnection(){
+    public void getConnection() {
         con.makeConnection();
     }
 }

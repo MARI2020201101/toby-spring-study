@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
-@Configuration
 public class DaoFactory {
     //생성 책임을 분리한다.
     private ConnectionMaker con;

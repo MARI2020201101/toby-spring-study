@@ -1,19 +1,35 @@
 package com.mariworld.spring.object;
 
-import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.junit.Assert.*;
+
+
 public class CountingUserDaoTest {
+
+    private ApplicationContext applicationContext;
+    private UserDao userDao;
+    private CountingConnectionMaker ccm;
+
+    @Before
+    public void setUp(){
+        applicationContext = new AnnotationConfigApplicationContext(CounterDaoFactory.class);
+        userDao = applicationContext.getBean("userDao",UserDao.class);
+        ccm = applicationContext.getBean("countingConnectionMaker",CountingConnectionMaker.class);
+    }
 
     @Test
     public void testCountingUserDao(){
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(CounterDaoFactory.class);
-        UserDao userDao = applicationContext.getBean("userDao",UserDao.class);
-        CountingConnectionMaker ccm = applicationContext.getBean("countingConnectionMaker",CountingConnectionMaker.class);
         userDao.get(1L);
-        Assert.assertEquals(1,ccm.getCounter());
-
+        assertEquals(1,ccm.getCounter());
     }
+
+    @Test(expected = AssertionError.class)
+    public void testFail(){
+        assertEquals(1,ccm.getCounter());
+    }
+
 }
