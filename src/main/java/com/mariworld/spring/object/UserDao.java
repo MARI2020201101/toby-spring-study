@@ -11,9 +11,11 @@ public class UserDao {
     private final ConnectionMaker con;
 
     public User get(long id){
-         return con.selectUser();
+        getConnection();
+        return con.selectUser();
     }
     public void add(User user){
+        getConnection();
         System.out.println(user.getName() + "was added ");
     }
     public void getConnection(){
