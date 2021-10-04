@@ -29,4 +29,12 @@ public class CalculatorTest {
         int multiply = calculator.calculate(filePath,new MultiplyBRCallback());
         Assert.assertEquals(24,multiply);
     }
+
+    @Test
+    public void testLineSumcal(){
+        //클라이언트는 내부 로직은 모르고, 메소드만 호출한다.
+        //바깥에서 해당 콜백안넣어줘도 이미 다 구현됨...!!! 쩐다-
+        int val = calculator.calcSum(filePath);
+        Assert.assertEquals(10,val);
+    }
 }
