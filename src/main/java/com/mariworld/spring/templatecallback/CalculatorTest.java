@@ -37,4 +37,16 @@ public class CalculatorTest {
         int val = calculator.calcSum(filePath);
         Assert.assertEquals(10,val);
     }
+
+    @Test
+    public void testLineMulCal(){
+        int val = calculator.calcMul(filePath);
+        Assert.assertEquals(24,val);
+    }
+
+    @Test
+    public void testGenericCal(){
+        String val = calculator.concat(filePath);
+        Assert.assertEquals("1234",val);
+    }
 }
