@@ -2,8 +2,6 @@ package com.mariworld.spring.object;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +11,12 @@ public class DaoFactory {
     //생성 책임을 분리한다.
     private ConnectionMaker con;
 
-    @Bean
+    //@Bean
     public UserDao userDao(){
         UserDao userDao = new UserDao(connectionMaker());
         return userDao;
     }
-    @Bean
+    //@Bean
     public UserDao2 userDao2(){
         UserDao2 userDao2 = new UserDao2(connectionMaker());
         return userDao2;

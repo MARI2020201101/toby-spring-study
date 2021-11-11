@@ -21,13 +21,13 @@ public class UserDaoTest {
         System.out.println(userDao.get(1L));
     }
 
-    @Test
+  /*  @Test
     public void testConfiguration(){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(DaoFactory.class);
         UserDao userDao = applicationContext.getBean("userDao",UserDao.class);
         System.out.println(userDao);
     }
-
+*/
     @Test
     public void testSingleton(){
         UserDao userDao = new DaoFactory().userDao();

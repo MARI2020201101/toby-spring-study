@@ -14,13 +14,13 @@ public class CountingUserDaoTest {
     private UserDao userDao;
     private CountingConnectionMaker ccm;
 
-    @Before
+ /*   @Before
     public void setUp(){
         applicationContext = new AnnotationConfigApplicationContext(CounterDaoFactory.class);
         userDao = applicationContext.getBean("userDao",UserDao.class);
         ccm = applicationContext.getBean("countingConnectionMaker",CountingConnectionMaker.class);
     }
-
+*/
     @Test
     public void testCountingUserDao(){
         userDao.get(1L);
